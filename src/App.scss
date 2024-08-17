@@ -1,0 +1,28 @@
+@import './assets/styles/media-query';
+
+.app {
+  display: flex;
+  background-image: url('./assets/images/bg-light.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  min-height: 100vh;
+
+  @include media('>=sm') {
+    justify-content: center;
+  }
+
+  @include media('<=sm') {
+    font-size: 14px;
+  }
+}
+
+.app-container {
+  flex-grow: 1;
+  margin: 0 20px;
+}
+
+p {
+  margin: 0;
+}

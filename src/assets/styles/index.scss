@@ -1,0 +1,17 @@
+@import './color';
+@import './font';
+@import './media-query';
+
+@import 'components/alert';
+@import 'components/button';
+@import 'components/card';
+@import 'components/heading';
+@import 'components/iconButton';
+@import 'components/table';
+@import 'components/forms/input';
+
+@import 'pages/home';
+
+.light {
+  color: $primary-light-color;
+}
