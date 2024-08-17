@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Weather App
 
 This project allows users to input city and country name to retrieve weather information from [OpenWeatherAPI](https://openweathermap.org/api).
 
