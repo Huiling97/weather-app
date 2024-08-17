@@ -1,4 +1,4 @@
-import { createContext, useReducer } from 'react';
+import { createContext, useEffect, useReducer } from 'react';
 
 const EntryContext = createContext();
 
@@ -23,11 +23,12 @@ const entryReducer = (state, action) => {
 };
 
 const EntryContextProvider = ({ children }) => {
-  const [entryState, dispatch] = useReducer(entryReducer);
+  const [entryState, dispatch] = useReducer(entryReducer, []);
 
-  const setEntry = (entryData) => {
-    dispatch({ type: 'SET', payload: entryData });
-  };
+  useEffect(() => {
+    const initState = JSON.parse(localStorage.getItem('weatherData')) || [];
+    dispatch({ type: 'SET', payload: initState });
+  }, []);
 
   const addEntry = (entryData) => {
     dispatch({ type: 'ADD', payload: entryData });
@@ -39,7 +40,6 @@ const EntryContextProvider = ({ children }) => {
 
   const value = {
     entries: entryState,
-    setEntry,
     addEntry,
     deleteEntry,
   };

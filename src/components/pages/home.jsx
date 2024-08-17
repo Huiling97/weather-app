@@ -24,12 +24,10 @@ const Home = () => {
     handleClear,
   } = useSearch();
   const { city, country } = inputs;
-  const { setEntry } = useContext(EntryContext);
+  const { entries } = useContext(EntryContext);
 
   useEffect(() => {
-    const initState = JSON.parse(localStorage.getItem('weatherData')) || [];
-    setData(initState[0]);
-    setEntry(initState);
+    setData(entries[0]);
   }, []);
 
   return (
