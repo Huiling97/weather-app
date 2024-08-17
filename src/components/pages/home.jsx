@@ -28,7 +28,7 @@ const Home = () => {
 
   useEffect(() => {
     setData(entries[0]);
-  }, []);
+  }, [entries]);
 
   return (
     <div>
