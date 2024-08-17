@@ -13,111 +13,16 @@ import { fetchDataByCityCountry } from '../../utils/fetchDataHelper';
 import { isMobile } from '../../utils/screenSizeHelper';
 import { EntryContext } from '../../store/entryContext';
 
-const MOCK_ENTRIES = [
-  {
-    city: 'New York',
-    country: 'US',
-    description: 'Clear',
-    temp: 25.3,
-    minTemp: 22.0,
-    maxTemp: 28.0,
-    humidity: 60,
-    time: '1723786199',
-  },
-  {
-    city: 'London',
-    country: 'GB',
-    description: 'Light rain',
-    temp: 18.2,
-    minTemp: 16.5,
-    maxTemp: 20.0,
-    humidity: 80,
-    time: '1723786199',
-  },
-  {
-    city: 'Tokyo',
-    country: 'JP',
-    description: 'Partly cloudy',
-    temp: 30.1,
-    minTemp: 28.0,
-    maxTemp: 32.0,
-    humidity: 65,
-    time: '1723786199',
-  },
-  {
-    city: 'Sydney',
-    country: 'AU',
-    description: 'Sunny',
-    temp: 22.5,
-    minTemp: 20.0,
-    maxTemp: 24.0,
-    humidity: 55,
-    time: '1723786199',
-  },
-  {
-    city: 'Paris',
-    country: 'FR',
-    description: 'Overcast',
-    temp: 20.0,
-    minTemp: 18.0,
-    maxTemp: 22.0,
-    humidity: 70,
-    time: '1723786199',
-  },
-  {
-    city: 'Osaka',
-    country: 'JP',
-    description: 'Overcast',
-    temp: 20.0,
-    minTemp: 18.0,
-    maxTemp: 22.0,
-    humidity: 70,
-    time: '1723786199',
-  },
-  {
-    city: 'Singapore',
-    country: 'SG',
-    description: 'Overcast',
-    temp: 20.0,
-    minTemp: 18.0,
-    maxTemp: 22.0,
-    humidity: 70,
-    time: '1723786199',
-  },
-  {
-    city: 'Paris',
-    country: 'FR',
-    description: 'Overcast',
-    temp: 20.0,
-    minTemp: 18.0,
-    maxTemp: 22.0,
-    humidity: 70,
-    time: '1723786199',
-  },
-];
-
-const MOCK_DATA = {
-  city: 'New York',
-  country: 'US',
-  description: 'Clear',
-  temp: 25.3,
-  minTemp: 22.0,
-  maxTemp: 28.0,
-  humidity: 60,
-  time: '1723786199',
-};
-
 const Home = () => {
   const [cityInput, setCityInput] = useState('');
   const [countryInput, setCountryInput] = useState('');
   const [data, setData] = useState({});
   const [error, setError] = useState('');
-  const { entries, setEntry, addEntry } = useContext(EntryContext);
+  const { setEntry, addEntry } = useContext(EntryContext);
 
   useEffect(() => {
     const initState = JSON.parse(localStorage.getItem('weatherData')) || [];
     setData(initState[0]);
-    // setData({MOCK_DATA});
     setEntry(initState);
   }, []);
 
@@ -212,7 +117,6 @@ const Home = () => {
       <div className='data-container'>
         {!isEmpty(data) && <Heading data={data} />}
         <Table handleClick={handleSearch} />
-        {/* <Table entries={MOCK_ENTRIES} handleClick={handleSearch} /> */}
       </div>
     </div>
   );
