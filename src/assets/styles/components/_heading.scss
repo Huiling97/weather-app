@@ -2,6 +2,7 @@
   text-align: left;
   margin-bottom: 15px;
   position: relative;
+  padding: 0 10px;
 
   &__logo {
     position: absolute;
@@ -71,5 +72,33 @@
     justify-content: space-between;
     gap: 0px;
     text-align: right;
+  }
+}
+
+.allDetails {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.allTemp {
+  display: flex;
+  flex-direction: column;
+}
+
+.minMax-temp {
+  display: flex;
+}
+
+.otherDetails {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 8px;
+  text-align: right;
+
+  @include media('>=sm') {
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: space-between;
   }
 }
