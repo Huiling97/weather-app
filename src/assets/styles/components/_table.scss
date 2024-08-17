@@ -5,7 +5,7 @@
   background-color: var(--bg-color-light);
   color: var(--text-color-primary);
   padding: 20px;
-  min-height: inherit;
+  max-height: inherit;
   justify-content: center;
 
   @include media('<=sm') {
@@ -28,6 +28,11 @@
     flex-direction: column;
     gap: 10px;
     align-items: center;
+    max-height: 40vh;
+
+    @include media('>=sm') {
+      max-height: 50vh;
+    }
   }
 
   &__body {
