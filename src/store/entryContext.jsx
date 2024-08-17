@@ -1,11 +1,6 @@
 import { createContext, useReducer } from 'react';
 
-const EntryContext = createContext({
-  entries: [],
-  setEntry: () => {},
-  addEntry: () => {},
-  deleteEntry: () => {},
-});
+const EntryContext = createContext();
 
 const entryReducer = (state, action) => {
   let updatedEntries;
