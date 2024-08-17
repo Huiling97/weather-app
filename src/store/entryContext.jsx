@@ -23,7 +23,7 @@ const entryReducer = (state, action) => {
     default:
       return state;
   }
-  sessionStorage.setItem('weatherData', JSON.stringify(updatedEntries));
+  localStorage.setItem('weatherData', JSON.stringify(updatedEntries));
   return updatedEntries;
 };
 

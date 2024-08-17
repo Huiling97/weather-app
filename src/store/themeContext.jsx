@@ -3,9 +3,7 @@ import { createContext, useState, useEffect } from 'react';
 const ThemeContext = createContext({});
 
 const ThemeContextProvider = ({ children }) => {
-  const [theme, setTheme] = useState(
-    sessionStorage.getItem('theme') || 'light'
-  );
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
