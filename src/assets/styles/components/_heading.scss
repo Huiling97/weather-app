@@ -71,6 +71,7 @@
       flex-direction: column-reverse;
       gap: 8px;
       text-align: right;
+      padding-left: 10px;
 
       @include media('>sm') {
         flex-direction: row;
