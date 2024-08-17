@@ -3,6 +3,7 @@
   margin-bottom: 15px;
   position: relative;
   padding: 0 10px;
+  color: var(--text-color-primary);
 
   &__logo {
     position: absolute;
@@ -42,7 +43,7 @@
   }
 
   &--primary {
-    color: $light-primary-dark-color;
+    color: var(--text-color-primary-dark);
     font-size: 5em;
     font-weight: bold;
     margin: 0;
@@ -53,15 +54,18 @@
   }
 
   &--secondary {
+    color: var(--text-color-primary);
     display: flex;
     margin-bottom: 5px;
     gap: 10px;
 
     &-bold {
+      color: var(--text-color-primary-light);
       font-weight: bold;
     }
 
     &-right {
+      color: var(--text-color-primary-light);
       display: flex;
       flex-direction: column-reverse;
       gap: 8px;

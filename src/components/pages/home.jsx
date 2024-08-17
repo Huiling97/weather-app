@@ -12,7 +12,6 @@ import Toggle from '../misc/toggle';
 import { fetchDataByCityCountry } from '../../utils/fetchDataHelper';
 import { isMobile } from '../../utils/screenSizeHelper';
 import { EntryContext } from '../../store/entryContext';
-import { ThemeContext } from '../../store/themeContext';
 
 const MOCK_ENTRIES = [
   {
@@ -114,10 +113,9 @@ const Home = () => {
   const [data, setData] = useState({});
   const [error, setError] = useState('');
   const { entries, setEntry, addEntry } = useContext(EntryContext);
-  const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
-    const initState = JSON.parse(sessionStorage.getItem('weatherData')) || [];
+    const initState = JSON.parse(localStorage.getItem('weatherData')) || [];
     setData(initState[0]);
     // setData({MOCK_DATA});
     setEntry(initState);
@@ -211,7 +209,7 @@ const Home = () => {
         </div>
         <>{error && <Alert styleClass='alert-error' message={error} />}</>
       </div>
-      <div className={`data-container ${theme}`}>
+      <div className='data-container'>
         {!isEmpty(data) && <Heading data={data} />}
         <Table handleClick={handleSearch} />
         {/* <Table entries={MOCK_ENTRIES} handleClick={handleSearch} /> */}

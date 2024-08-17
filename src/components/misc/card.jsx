@@ -4,11 +4,9 @@ import IconButton from './iconButton';
 import { formatTimestamp } from '../../utils/timestampHelper';
 import { useContext } from 'react';
 import { EntryContext } from '../../store/entryContext';
-import { ThemeContext } from '../../store/themeContext';
 
 const Card = ({ entry, handleClick }) => {
   const { deleteEntry } = useContext(EntryContext);
-  const { theme } = useContext(ThemeContext);
   const { city, country, time } = entry;
 
   const handleDelete = () => {
@@ -16,7 +14,7 @@ const Card = ({ entry, handleClick }) => {
   };
 
   return (
-    <div className={`card ${theme}`}>
+    <div className='card'>
       <div className='card__details'>
         <p>
           {city}, {country}

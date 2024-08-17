@@ -1,9 +1,4 @@
-import { useContext } from 'react';
-import { ThemeContext } from '../../store/themeContext';
-
 const Input = ({ type, label, inputValue, setInputValue, setError }) => {
-  const { theme } = useContext(ThemeContext);
-
   const handleChange = (e) => {
     const value = e.target.value;
     setInputValue(value);
@@ -14,7 +9,7 @@ const Input = ({ type, label, inputValue, setInputValue, setError }) => {
 
   return (
     <div className='input-container'>
-      <div className={`input ${theme}`}>
+      <div className='input'>
         <label className='input__label-small'>{label}</label>
         <input
           className='input-plain'

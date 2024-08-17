@@ -7,6 +7,6 @@
 
 .custom-switch {
   .ant-switch-inner {
-    background-color: $light-primary-light-color !important;
+    background-color: var(--bg-color-btn-light) !important;
   }
 }

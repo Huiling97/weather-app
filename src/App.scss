@@ -1,5 +1,3 @@
-@import './assets/styles/theme/variables-light';
-@import './assets/styles/theme/variables-dark';
 @import './assets/styles/media-query';
 
 .app {
@@ -27,30 +25,4 @@
 
 p {
   margin: 0;
-}
-
-.light {
-  color: $light-primary-color;
-
-  &-theme--light {
-    color: $light-primary-light-color;
-  }
-
-  &-theme--dark {
-    color: $light-primary-dark-color;
-  }
-}
-
-.dark {
-  color: $dark-primary-color;
-  background: rgba(26, 26, 26, 0.3);
-  border: none;
-
-  &-theme--light {
-    color: $dark-primary-color;
-  }
-
-  &-theme--dark {
-    color: $dark-primary-color;
-  }
 }

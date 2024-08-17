@@ -2,11 +2,9 @@ import isEmpty from 'lodash/isEmpty';
 import Card from './card';
 import { useContext } from 'react';
 import { EntryContext } from '../../store/entryContext';
-import { ThemeContext } from '../../store/themeContext';
 
 const Table = ({ handleClick }) => {
   const { entries } = useContext(EntryContext);
-  const { theme } = useContext(ThemeContext);
 
   const displayEntries = () => {
     return entries.map((entry, index) => (
@@ -19,7 +17,7 @@ const Table = ({ handleClick }) => {
   };
 
   return (
-    <div className={`table ${theme}`}>
+    <div className='table'>
       <div className='table__data'>
         {isEmpty(entries) ? (
           <>

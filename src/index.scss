@@ -5,19 +5,31 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--background-color);
-  color: var(--text-color);
 }
 
-/* Light theme */
 [data-theme='light'] {
   background-image: url('./assets/images/bg-light.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  --text-color-primary: #000000;
+  --text-color-primary-dark: rgb(108, 64, 181);
+  --text-color-primary-light: #666666;
+  --bg-color: rgba(255, 255, 255, 0.4);
+  --bg-color-light: rgba(255, 255, 255, 0.2);
+  --bg-color-icon-light: rgba(255, 255, 255, 1);
+  --bg-color-icon-dark: rgba(108, 64, 181, 1);
+  --bg-color-btn-light: rgba(255, 255, 255, 0.5);
 }
 
-/* Dark theme */
 [data-theme='dark'] {
   background-image: url('./assets/images/bg-dark.png');
+  --text-color-primary: #ffffff;
+  --text-color-primary-dark: #ffffff;
+  --text-color-primary-light: #ffffff;
+  --bg-color: rgba(26, 26, 26, 0.3);
+  --bg-color-light: rgba(26, 26, 26, 0.3);
+  --bg-color-icon-light: rgba(255, 255, 255, 1);
+  --bg-color-icon-dark: rgba(255, 255, 255, 1);
+  --bg-color-btn-light: rgba(255, 255, 255, 0.5);
 }
