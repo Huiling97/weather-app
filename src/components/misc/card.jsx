@@ -9,6 +9,8 @@ const Card = ({ entry, handleClick }) => {
   const { deleteEntry } = useContext(EntryContext);
   const { city, country, time } = entry;
 
+  const handleSearchClick = () => handleClick(city, country);
+
   const handleDelete = () => {
     deleteEntry(time);
   };
@@ -25,7 +27,7 @@ const Card = ({ entry, handleClick }) => {
         <IconButton
           imgSrc={SearchIcon}
           styleClass='card__icon'
-          handleClick={() => handleClick(city, country)}
+          handleClick={handleSearchClick}
         />
         <IconButton
           imgSrc={DeleteIcon}

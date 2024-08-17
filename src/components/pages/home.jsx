@@ -30,6 +30,8 @@ const Home = () => {
     setData(entries[0]);
   }, [entries]);
 
+  const handleSearchClick = () => handleSearch(city, country);
+
   return (
     <div>
       <div className='toggle-container'>
@@ -54,7 +56,7 @@ const Home = () => {
               <Button
                 label='Search'
                 styleClass='form__btn--sm'
-                handleClick={() => handleSearch(city, country)}
+                handleClick={handleSearchClick}
               />
               <Button
                 styleClass='form__btn--sm'
@@ -67,7 +69,7 @@ const Home = () => {
               <IconButton
                 imgSrc={SearchIcon}
                 styleClass='form__icon-btn--lg'
-                handleClick={() => handleSearch(city, country)}
+                handleClick={handleSearchClick}
               />
               <IconButton
                 imgSrc={DeleteIcon}
