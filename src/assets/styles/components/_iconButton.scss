@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 
   img {
     width: 60%;
@@ -12,6 +13,10 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+}
+
+.styled-icon:hover {
+  background: var(--bg-color-icon-hover);
 }
 
 .card__icon {
