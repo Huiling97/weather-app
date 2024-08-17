@@ -50,7 +50,7 @@ const useSearch = () => {
         setError('No data found');
       }
     },
-    [inputs]
+    [addEntry]
   );
 
   const handleClear = useCallback(() => {
