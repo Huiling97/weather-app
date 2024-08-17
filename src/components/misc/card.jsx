@@ -7,10 +7,10 @@ import { EntryContext } from '../../store/entryContext';
 
 const Card = ({ entry, handleClick }) => {
   const { deleteEntry } = useContext(EntryContext);
-  const { id, city, country, time } = entry;
+  const { city, country, time } = entry;
 
   const handleDelete = () => {
-    deleteEntry(id);
+    deleteEntry(time);
   };
 
   return (

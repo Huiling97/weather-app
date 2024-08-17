@@ -18,7 +18,7 @@ const entryReducer = (state, action) => {
       updatedEntries = [action.payload, ...state];
       break;
     case 'DELETE':
-      updatedEntries = state.filter((entry) => entry.id !== action.payload);
+      updatedEntries = state.filter((entry) => entry.time !== action.payload);
       break;
     default:
       return state;
@@ -38,8 +38,8 @@ const EntryContextProvider = ({ children }) => {
     dispatch({ type: 'ADD', payload: entryData });
   };
 
-  const deleteEntry = (id) => {
-    dispatch({ type: 'DELETE', payload: id });
+  const deleteEntry = (time) => {
+    dispatch({ type: 'DELETE', payload: time });
   };
 
   const value = {
