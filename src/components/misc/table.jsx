@@ -1,4 +1,4 @@
-import isEmpty from 'lodash/isEmpty';
+import isEmpty from 'lodash.isempty';
 import Card from './card';
 import { useContext } from 'react';
 import { EntryContext } from '../../store/entryContext';
