@@ -7,10 +7,12 @@ import Alert from '../misc/alert';
 import Table from '../misc/table';
 import Heading from '../misc/heading';
 import IconButton from '../misc/iconButton';
+import Button from '../misc/button';
+import Toggle from '../misc/toggle';
 import { fetchDataByCityCountry } from '../../utils/fetchDataHelper';
 import { isMobile } from '../../utils/screenSizeHelper';
 import { EntryContext } from '../../store/entryContext';
-import Button from '../misc/button';
+import { ThemeContext } from '../../store/themeContext';
 
 const MOCK_ENTRIES = [
   {
@@ -112,13 +114,14 @@ const Home = () => {
   const [data, setData] = useState({});
   const [error, setError] = useState('');
   const { entries, setEntry, addEntry } = useContext(EntryContext);
+  const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
     const initState = JSON.parse(sessionStorage.getItem('weatherData')) || [];
     setData(initState[0]);
     // setData({MOCK_DATA});
     setEntry(initState);
-  }, [setEntry]);
+  }, []);
 
   const handleSearch = async (city, country) => {
     try {
@@ -160,6 +163,9 @@ const Home = () => {
 
   return (
     <div>
+      <div className='toggle-container'>
+        <Toggle />
+      </div>
       <div className='form-container'>
         <div className='form'>
           <Input
@@ -205,7 +211,7 @@ const Home = () => {
         </div>
         <>{error && <Alert styleClass='alert-error' message={error} />}</>
       </div>
-      <div className='data-container'>
+      <div className={`data-container ${theme}`}>
         {!isEmpty(data) && <Heading data={data} />}
         <Table handleClick={handleSearch} />
         {/* <Table entries={MOCK_ENTRIES} handleClick={handleSearch} /> */}

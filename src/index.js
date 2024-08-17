@@ -1,17 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './index.scss';
 import './assets/styles/index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { EntryContextProvider } from './store/entryContext';
+import { ThemeContextProvider } from './store/themeContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <EntryContextProvider>
-      <App />
-    </EntryContextProvider>
+    <ThemeContextProvider>
+      <EntryContextProvider>
+        <App />
+      </EntryContextProvider>
+    </ThemeContextProvider>
   </React.StrictMode>
 );
 

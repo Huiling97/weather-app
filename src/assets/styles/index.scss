@@ -1,5 +1,5 @@
-@import './color';
-@import './font';
+@import './theme/variables-light';
+@import './theme/variables-dark';
 @import './media-query';
 
 @import 'components/alert';
@@ -8,10 +8,7 @@
 @import 'components/heading';
 @import 'components/iconButton';
 @import 'components/table';
+@import 'components/toggle';
 @import 'components/forms/input';
 
 @import 'pages/home';
-
-.light {
-  color: $primary-light-color;
-}

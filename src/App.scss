@@ -1,11 +1,9 @@
+@import './assets/styles/theme/variables-light';
+@import './assets/styles/theme/variables-dark';
 @import './assets/styles/media-query';
 
 .app {
   display: flex;
-  background-image: url('./assets/images/bg-light.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
   width: 100%;
   min-height: 100vh;
 
@@ -29,4 +27,30 @@
 
 p {
   margin: 0;
+}
+
+.light {
+  color: $light-primary-color;
+
+  &-theme--light {
+    color: $light-primary-light-color;
+  }
+
+  &-theme--dark {
+    color: $light-primary-dark-color;
+  }
+}
+
+.dark {
+  color: $dark-primary-color;
+  background: rgba(26, 26, 26, 0.3);
+  border: none;
+
+  &-theme--light {
+    color: $dark-primary-color;
+  }
+
+  &-theme--dark {
+    color: $dark-primary-color;
+  }
 }

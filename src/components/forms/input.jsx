@@ -1,4 +1,9 @@
+import { useContext } from 'react';
+import { ThemeContext } from '../../store/themeContext';
+
 const Input = ({ type, label, inputValue, setInputValue, setError }) => {
+  const { theme } = useContext(ThemeContext);
+
   const handleChange = (e) => {
     const value = e.target.value;
     setInputValue(value);
@@ -9,7 +14,7 @@ const Input = ({ type, label, inputValue, setInputValue, setError }) => {
 
   return (
     <div className='input-container'>
-      <div className='input'>
+      <div className={`input ${theme}`}>
         <label className='input__label-small'>{label}</label>
         <input
           className='input-plain'
@@ -17,7 +22,7 @@ const Input = ({ type, label, inputValue, setInputValue, setError }) => {
           id={type}
           value={inputValue}
           onChange={handleChange}
-          autocomplete='off'
+          autoComplete='off'
         />
       </div>
     </div>
