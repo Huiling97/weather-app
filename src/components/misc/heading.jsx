@@ -8,10 +8,12 @@ const Heading = ({ data }) => {
       <img src={SunImage} alt='logo' className='heading__logo' />
       <div className='heading__details'>
         <div className='heading__details--main'>
-          <p className={`heading__details--primary`}>{data.temp}&deg;</p>
+          <p className={`heading__details--primary`}>
+            {Math.round(data.temp)}&deg;
+          </p>
           <div className='heading__details--secondary'>
-            <p>H: {data.maxTemp}&deg;</p>
-            <p>L: {data.minTemp}&deg;</p>
+            <p>H: {Math.round(data.maxTemp)}&deg;</p>
+            <p>L: {Math.round(data.minTemp)}&deg;</p>
           </div>
           <div className={`heading__details--secondary-bold`}>
             {data.city}, {data.country}
