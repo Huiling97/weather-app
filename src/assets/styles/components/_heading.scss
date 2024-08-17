@@ -10,7 +10,7 @@
     max-width: 40%;
     height: auto;
     right: 0;
-    bottom: 10px;
+    bottom: 1em;
 
     @include media('<=sm') {
       max-width: 50%;
@@ -28,6 +28,7 @@
 
     @include media('>=xxxl') {
       max-width: 30%;
+      bottom: -1em;
     }
   }
 }
