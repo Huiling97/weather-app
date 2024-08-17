@@ -27,7 +27,7 @@ const Table = ({ entries, handleClick }) => {
         ) : (
           <>
             <p className='table__header'>Search history</p>
-            {displayEntries(entries)}
+            <div className='table__body'>{displayEntries(entries)}</div>
           </>
         )}
       </div>
