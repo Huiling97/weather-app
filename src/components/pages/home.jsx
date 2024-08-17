@@ -88,25 +88,25 @@ const Home = () => {
             <div className='form__btn'>
               <Button
                 label='Search'
-                styleClass='form__btn--light'
+                styleClass='form__btn--sm'
                 handleClick={() => handleSearch(cityInput, countryInput)}
               />
               <Button
-                styleClass='form__btn--light'
+                styleClass='form__btn--sm'
                 label='Clear'
                 handleClick={handleClear}
               />
             </div>
           ) : (
-            <div className='form__icon-button'>
+            <div className='form__icon-btn'>
               <IconButton
                 imgSrc={SearchIcon}
-                styleClass='form__icon--dark'
+                styleClass='form__icon-btn--lg'
                 handleClick={() => handleSearch(cityInput, countryInput)}
               />
               <IconButton
                 imgSrc={DeleteIcon}
-                styleClass='form__icon--dark'
+                styleClass='form__icon-btn--lg'
                 handleClick={handleClear}
               />
             </div>

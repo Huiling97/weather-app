@@ -30,9 +30,16 @@
     gap: 5px;
   }
 
-  &__icon-button {
+  &__icon-btn {
     display: flex;
     gap: 10px;
+
+    &--lg {
+      background: var(--bg-color-icon-dark);
+      width: 2rem;
+      height: 2rem;
+      border-radius: 30%;
+    }
   }
 }
 

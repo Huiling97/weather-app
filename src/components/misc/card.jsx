@@ -24,12 +24,12 @@ const Card = ({ entry, handleClick }) => {
       <div className='card__icon-container'>
         <IconButton
           imgSrc={SearchIcon}
-          styleClass='card__icon--light'
+          styleClass='card__icon'
           handleClick={() => handleClick(city, country)}
         />
         <IconButton
           imgSrc={DeleteIcon}
-          styleClass='card__icon--light'
+          styleClass='card__icon'
           handleClick={handleDelete}
         />
       </div>

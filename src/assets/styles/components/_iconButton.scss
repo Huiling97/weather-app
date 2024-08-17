@@ -14,14 +14,7 @@
   }
 }
 
-.form__icon--dark {
-  background: var(--bg-color-icon-dark);
-  width: 2rem;
-  height: 2rem;
-  border-radius: 30%;
-}
-
-.card__icon--light {
+.card__icon {
   background: var(--bg-color-icon-light);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 34px;
