@@ -3,8 +3,8 @@ import Card from './card';
 import { useContext } from 'react';
 import { EntryContext } from '../../store/entryContext';
 
-const Table = ({ entries, handleClick }) => {
-  // const {entries} = useContext(EntryContext);
+const Table = ({ handleClick }) => {
+  const { entries } = useContext(EntryContext);
 
   const displayEntries = () => {
     return entries.map((entry, index) => (

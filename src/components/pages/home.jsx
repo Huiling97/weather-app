@@ -63,6 +63,36 @@ const MOCK_ENTRIES = [
     humidity: 70,
     time: '1723786199',
   },
+  {
+    city: 'Osaka',
+    country: 'JP',
+    description: 'Overcast',
+    temp: 20.0,
+    minTemp: 18.0,
+    maxTemp: 22.0,
+    humidity: 70,
+    time: '1723786199',
+  },
+  {
+    city: 'Singapore',
+    country: 'SG',
+    description: 'Overcast',
+    temp: 20.0,
+    minTemp: 18.0,
+    maxTemp: 22.0,
+    humidity: 70,
+    time: '1723786199',
+  },
+  {
+    city: 'Paris',
+    country: 'FR',
+    description: 'Overcast',
+    temp: 20.0,
+    minTemp: 18.0,
+    maxTemp: 22.0,
+    humidity: 70,
+    time: '1723786199',
+  },
 ];
 
 const MOCK_DATA = {
@@ -86,9 +116,9 @@ const Home = () => {
   useEffect(() => {
     const initState = JSON.parse(sessionStorage.getItem('weatherData')) || [];
     setData(initState[0]);
-    setData(MOCK_DATA);
+    // setData({MOCK_DATA});
     setEntry(initState);
-  }, []);
+  }, [setEntry]);
 
   const handleSearch = async (city, country) => {
     try {
@@ -177,7 +207,8 @@ const Home = () => {
       </div>
       <div className='data-container'>
         {!isEmpty(data) && <Heading data={data} />}
-        <Table entries={MOCK_ENTRIES} handleClick={handleSearch} />
+        <Table handleClick={handleSearch} />
+        {/* <Table entries={MOCK_ENTRIES} handleClick={handleSearch} /> */}
       </div>
     </div>
   );

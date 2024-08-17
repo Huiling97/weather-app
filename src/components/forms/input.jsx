@@ -2,7 +2,9 @@ const Input = ({ type, label, inputValue, setInputValue, setError }) => {
   const handleChange = (e) => {
     const value = e.target.value;
     setInputValue(value);
-    setError('');
+    if (setError) {
+      setError('');
+    }
   };
 
   return (
@@ -15,6 +17,7 @@ const Input = ({ type, label, inputValue, setInputValue, setError }) => {
           id={type}
           value={inputValue}
           onChange={handleChange}
+          autocomplete='off'
         />
       </div>
     </div>
