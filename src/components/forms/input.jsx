@@ -1,12 +1,4 @@
-const Input = ({ type, label, inputValue, setInputValue, setError }) => {
-  const handleChange = (e) => {
-    const value = e.target.value;
-    setInputValue(value);
-    if (setError) {
-      setError('');
-    }
-  };
-
+const Input = ({ type, label, inputValue, handleChange }) => {
   return (
     <div className='input-container'>
       <div className='input'>
@@ -15,6 +7,7 @@ const Input = ({ type, label, inputValue, setInputValue, setError }) => {
           className='input-plain'
           type='text'
           id={type}
+          name={type}
           value={inputValue}
           onChange={handleChange}
           autoComplete='off'
