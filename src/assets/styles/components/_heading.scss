@@ -1,0 +1,75 @@
+.heading {
+  text-align: left;
+  margin-bottom: 15px;
+  position: relative;
+
+  &__logo {
+    position: absolute;
+    max-width: 20em;
+    height: auto;
+    right: 0;
+    bottom: 10px;
+
+    @include media('<=sm') {
+      max-width: 50%;
+      right: -20px;
+      bottom: 9em;
+    }
+
+    @include media('>=md') {
+      @include media('<=lg') {
+        max-width: 40%;
+        right: 0px;
+        bottom: 20px;
+      }
+    }
+
+    @include media('>=xl') {
+      bottom: -30px;
+    }
+  }
+
+  &__primary {
+    color: $primary-dark-color;
+    font-size: 5em;
+    font-weight: bold;
+    margin: 0;
+
+    @include media('<=sm') {
+      font-size: 4em;
+    }
+  }
+
+  &__secondary {
+    display: flex;
+    flex-direction: column;
+    color: $primary-color;
+
+    &--row {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 10px;
+    }
+
+    .main {
+      justify-content: flex-start;
+      gap: 2px;
+    }
+  }
+
+  .layout-row {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+
+  .layout-column {
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0px;
+    text-align: right;
+  }
+}
