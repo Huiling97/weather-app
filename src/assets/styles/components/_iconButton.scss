@@ -1,0 +1,30 @@
+.styled-icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 60%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.form__icon--dark {
+  background: rgba(108, 64, 181, 1);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 30%;
+}
+
+.card__icon--light {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
